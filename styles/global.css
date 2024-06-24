@@ -1,1 +1,22 @@
-/*# sourceMappingURL=global.css.map */
+h3 {
+  color: red;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 46px;
+  background-color: teal;
+}
+
+p {
+  color: red;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}/*# sourceMappingURL=global.css.map */

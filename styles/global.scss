@@ -1,2 +1,35 @@
-@import "components/section/index";
-@import "components/ui/index";
+$primary-color: red;
+$primary-border: 2px solid green;
+
+@mixin globalTextStyle {
+  color: $primary-color;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@mixin flexDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fontAndFlex {
+  @include flexDisplay;
+  @include globalTextStyle;
+}
+
+h3 {
+  @include globalTextStyle.color;
+  font-size: 46px;
+  background-color: teal;
+}
+
+p {
+  @include globalTextStyle;
+}
+
+div {
+  @include flexDisplay;
+  flex-direction: column;
+}
