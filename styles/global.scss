@@ -1,35 +1,11 @@
-@mixin primary-border($width: 3px, $color: pink) {
-  border: $width solid $color;
+.price {
+  color: red;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
 }
 
-@mixin flexElement($alignPosition, $justifyposition) {
-  display: flex;
-  align-items: $alignPosition;
-  justify-content: $justifyposition;
-}
-
-@mixin gridContainer(
-  $columsNum: 1,
-  $rowsNum: 1,
-  $columsWidth: 30px,
-  $rowWidth: 30px
-) {
-  display: grid;
-  grid-template-columns: repeat($columsNum, $columsWidth);
-  grid-template-rows: repeat($rowsNum, $rowsWidth);
-}
-
-div {
-  @include flexElement(center, end);
-  flex-direction: column;
-}
-
-h3 {
-  @include primary-border(2px, green);
-}
-p {
-  @include primary-border(1px, red);
-}
 button {
-  @include primary-border(3px);
+  @extend .price; // обращаемся к стилизации html элементов как к мексинам
+  width: 120px;
 }
