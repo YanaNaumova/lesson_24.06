@@ -1,35 +1,35 @@
-$primary-color: red;
-$primary-border: 2px solid green;
-
-@mixin globalTextStyle {
-  color: $primary-color;
-  font-size: 25px;
-  font-weight: 600;
-  font-family: "Courier New", Courier, monospace;
+@mixin primary-border($width: 3px, $color: pink) {
+  border: $width solid $color;
 }
 
-@mixin flexDisplay {
+@mixin flexElement($alignPosition, $justifyposition) {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: $alignPosition;
+  justify-content: $justifyposition;
 }
 
-@mixin fontAndFlex {
-  @include flexDisplay;
-  @include globalTextStyle;
-}
-
-h3 {
-  @include globalTextStyle.color;
-  font-size: 46px;
-  background-color: teal;
-}
-
-p {
-  @include globalTextStyle;
+@mixin gridContainer(
+  $columsNum: 1,
+  $rowsNum: 1,
+  $columsWidth: 30px,
+  $rowWidth: 30px
+) {
+  display: grid;
+  grid-template-columns: repeat($columsNum, $columsWidth);
+  grid-template-rows: repeat($rowsNum, $rowsWidth);
 }
 
 div {
-  @include flexDisplay;
+  @include flexElement(center, end);
   flex-direction: column;
+}
+
+h3 {
+  @include primary-border(2px, green);
+}
+p {
+  @include primary-border(1px, red);
+}
+button {
+  @include primary-border(3px);
 }
